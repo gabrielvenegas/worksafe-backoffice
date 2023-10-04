@@ -18,6 +18,7 @@ import { getDatabase, ref, set } from "firebase/database";
 import firebaseApp from "../firebase";
 import { useEffect } from "react";
 import jwt from "jsonwebtoken";
+import IncomingMessages from "../components/incoming-messages";
 
 const formSchema = z.object({
   registration: z.string(),
@@ -33,7 +34,6 @@ export default function Home() {
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values);
     const db = getDatabase(firebaseApp);
 
     // uuid v4 generate
@@ -133,6 +133,8 @@ export default function Home() {
           </Button>
         </form>
       </Form>
+
+      <IncomingMessages />
     </main>
   );
 }
