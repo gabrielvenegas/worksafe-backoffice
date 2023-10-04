@@ -61,8 +61,8 @@ export default function Home() {
       };
 
       if (
-        token.user === process.env.NEXT_PUBLIC_LOCAL_USER &&
-        token.password === process.env.NEXT_PUBLIC_LOCAL_PASSWORD
+        token?.user === process.env.NEXT_PUBLIC_LOCAL_USER &&
+        token?.password === process.env.NEXT_PUBLIC_LOCAL_PASSWORD
       )
         return;
     }
