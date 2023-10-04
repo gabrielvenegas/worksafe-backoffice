@@ -56,10 +56,15 @@ export default function Home() {
         String(process.env.NEXT_PUBLIC_LOCAL_SECRET)
       ) as {
         user: string;
+        password: string;
         iat: number;
       };
 
-      if (token.user === process.env.NEXT_PUBLIC_LOCAL_USER) return;
+      if (
+        token.user === process.env.NEXT_PUBLIC_LOCAL_USER &&
+        token.password === process.env.NEXT_PUBLIC_LOCAL_PASSWORD
+      )
+        return;
     }
 
     const user = prompt("Usuário");
@@ -75,7 +80,7 @@ export default function Home() {
 
     try {
       const token = jwt.sign(
-        { user },
+        { user, password },
         String(process.env.NEXT_PUBLIC_LOCAL_SECRET)
       );
 
