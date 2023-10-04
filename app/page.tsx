@@ -91,7 +91,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col p-24">
+    <main className="flex min-h-screen flex-col p-4 md:p-24">
       <h1 className="text-3xl font-bold">Enviar mensagem</h1>
       <Spacer />
       <Form {...form}>
@@ -128,7 +128,7 @@ export default function Home() {
 
           <Spacer />
 
-          <Button className="w-40" type="submit">
+          <Button className="w-full md:w-40" type="submit">
             Enviar
           </Button>
         </form>
